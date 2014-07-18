@@ -51,13 +51,13 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		For Minetest rules output.
 		"""
-		irc.reply("These servers are NOT a dating service. They are a Minetest gaming system. We are here to play a game and build some cool worlds, not make out. If you want the latter, go search the web for an appropriate resource and confine your dating discussions to those places, or you WILL be removed from here. Period.", prefixNick = false)	
+		irc.reply("These servers are NOT a dating service. They are a Minetest gaming system. We are here to play a game and build some cool worlds, not make out. If you want the latter, go search the web for an appropriate resource and confine your dating discussions to those places, or you WILL be removed from here. Period.", prefixNick = False)	
 	dating = wrap(dating)
 	def skin(self, irc, msg, args):
 	    """ takes no arguments
 	    Displays how to get a skin on a Minetest server, if the server supports it.
 	    """
-	    irc.reply("To get a skin, send a link to the skin you want to the server's Owner. Once installed, it will take effect at the next restart (usually around 10:00 AM UTC/5:00 AM EST). Minetest uses the same skin format as Minecraft, just search the web or go to minecraftskins.com or similar. A skin works only on the server it was installed on.", prefixNick = false)
+	    irc.reply("To get a skin, send a link to the skin you want to the server's Owner. Once installed, it will take effect at the next restart (usually around 10:00 AM UTC/5:00 AM EST). Minetest uses the same skin format as Minecraft, just search the web or go to minecraftskins.com or similar. A skin works only on the server it was installed on.", prefixNick = False)
 	skin = wrap(skin)
 	
 	# Alias for "skin"
@@ -100,7 +100,7 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells people about the illegal tablet clients that are frequently used.
 		"""
-		worldcraft(self, irc, msg, args)
+		Minetest_Rules.worldcraft(self, irc, msg, args)
 	buildcraft = wrap(buildcraft)
 	
 	def lag(self, irc, msg, args):
