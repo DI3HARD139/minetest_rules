@@ -114,7 +114,7 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells people how to properly protect their land.
 		"""
-		irc.reply("To protect your land, go to one corner of the area, dig into the ground, and type \"/area_pos1\" without quotes. Then, go to the other corner and build into the sky, then type \"/area_pos2\", again, without quotes. After you finish doing that, type \"/protect\" without quotes. Your land is now protected! Please note that only protecting rectangles of land are supported.", prefixNick = False)
+		irc.reply("To protect your land, go to one corner of the area, dig into the ground, and type \"/area_pos1\" without quotes. Then, go to the other corner and build into the sky, then type \"/area_pos2\", again, without quotes. After you finish doing that, type \"/protect <your_area_description>\" without quotes (fill in your description instead of <your_area_description>). Your land is now protected! Please note that only protecting rectangles of land are supported.", prefixNick = False)
 	protect = wrap(protect)
 	
 Class = Minetest_Rules
