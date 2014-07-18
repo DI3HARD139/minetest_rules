@@ -51,13 +51,13 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		For Minetest rules output.
 		"""
-		irc.reply("These servers are NOT a dating service. They are a Minetest gaming system. We are here to play a game and build some cool worlds, not make out. If you want the latter, go search the web for an appropriate resource and confine your dating discussions to those places, or you WILL be removed from here. Period.")	
+		irc.reply("These servers are NOT a dating service. They are a Minetest gaming system. We are here to play a game and build some cool worlds, not make out. If you want the latter, go search the web for an appropriate resource and confine your dating discussions to those places, or you WILL be removed from here. Period.", prefixNick = false)	
 	dating = wrap(dating)
 	def skin(self, irc, msg, args):
 	    """ takes no arguments
 	    Displays how to get a skin on a Minetest server, if the server supports it.
 	    """
-	    irc.reply("To get a skin, send a link to the skin you want to the server's Owner. Once installed, it will take effect at the next restart (usually around 10:00 AM UTC/5:00 AM EST). Minetest uses the same skin format as Minecraft, just search the web or go to minecraftskins.com or similar. A skin works only on the server it was installed on.")
+	    irc.reply("To get a skin, send a link to the skin you want to the server's Owner. Once installed, it will take effect at the next restart (usually around 10:00 AM UTC/5:00 AM EST). Minetest uses the same skin format as Minecraft, just search the web or go to minecraftskins.com or similar. A skin works only on the server it was installed on.", prefixNick = false)
 	skin = wrap(skin)
 	
 	# Alias for "skin"
@@ -72,8 +72,51 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells a user about respect.
 		"""
-		irc.reply("We expect users on our servers to treat each other with respect. That means not cussing people out, telling people to shut up , etc. You were not taught by your parents to act any other way, and we expect you to behave appropriately to be here. Treat others as you'd want to be treated. If you can't abide by this simple rule, then leave or you will be removed.")
+		irc.reply("We expect users on our servers to treat each other with respect. That means not cussing people out, telling people to shut up , etc. You were not taught by your parents to act any other way, and we expect you to behave appropriately to be here. Treat others as you'd want to be treated. If you can't abide by this simple rule, then leave or you will be removed.", prefixNick = False)
 	respect = wrap(respect)
+	
+	def rules(self, irc, msg, args):
+		""" takes no arguments
+		Tells people how to find the rules.
+		"""
+		irc.reply("On every server is a set of rules. In order to build and dig on that server, you must first seek out and read the rules. These are usually found near the spawn building. Then, depending on the server, you may need to present a code to verify that you have read the rules.", prefixNick = False)
+	rules = wrap(rules)
+	
+	def spawn(self, irc, msg, args):
+		""" takes no arguments
+		Tells people how to use the /spawn command.
+		"""
+		irc.reply("Most servers have a \"/spawn\" command, that will return you to your starting point. This is especially useful if you need to meet other players, or if you need to get unstuck. To use it, simply type \"/spawn\" into chat.", prefixNick = False)
+	rules = wrap(rules)
+	
+	def  worldcraft(self, irc, msg, args):
+		""" takes no arguments
+		Tells people about the illegal tablet clients that are frequently used.
+		"""
+		irc.reply("Worldcraft, Buildcraft, Starve Games and others are unsupported versions of Minetest. You will most likely experience poor performance, low framerate or lag. Either get Minetest for a PC, or, if a tablet is your only option, get it from the Minetest forums (https://forum.minetest.net/viewtopic.php?f=42&t=9389). ", prefixNick = False)
+	worldcraft = wrap(worldcraft)
+	
+	def buildcraft(self, irc, msg, args):
+		""" takes no arguments
+		Tells people about the illegal tablet clients that are frequently used.
+		"""
+		worldcraft(self, irc, msg, args)
+	buildcraft = wrap(buildcraft)
+	
+	def lag(self, irc, msg, args):
+		""" takes no arguments
+		Tells people about the differences between lag and low FPS.
+		"""
+		irc.reply("Lag is not low FPS. Low FPS makes the game appear slow and glitchy. Lag makes opening chests and doors take a bit of time.", prefixNick = False)
+	lag = wrap(lag)
+	
+	def protect(self, irc, msg, args):
+		""" takes no arguments
+		Tells people how to properly protect their land.
+		"""
+		irc.reply("To protect your land, go to one corner of the area, dig into the ground, and type \"/area_pos1\" without quotes. Then, go to the other corner and build into the sky, then type \"/area_pos2\", again, without quotes. After you finish doing that, type \"/protect\" without quotes. Your land is now protected! Please note that only protecting rectangles of land are supported.", prefixNick = False)
+	protect = wrap(protect)
+	
 Class = Minetest_Rules
 
 
