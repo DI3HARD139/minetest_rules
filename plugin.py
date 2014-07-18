@@ -117,6 +117,20 @@ class Minetest_Rules(callbacks.Plugin):
 		irc.reply("To protect your land, go to one corner of the area, dig into the ground, and type \"/area_pos1\" without quotes. Then, go to the other corner and build into the sky, then type \"/area_pos2\", again, without quotes. After you finish doing that, type \"/protect <your_area_description>\" without quotes (fill in your description instead of <your_area_description>). Your land is now protected! Please note that only protecting rectangles of land are supported.", prefixNick = False)
 	protect = wrap(protect)
 	
+	def asking(self, irc, msg, args):
+		""" takes no arguments
+		Tells people how to ask a question.
+		"""
+		irc.reply("Do not just scream \"HELP!\" in chat. If you need something done, say <username>, <your question>. For instance, if you need help with building, say \"sample_dude, I need help building.\".", prefixNick = False)
+	asking = wrap(asking)
+	
+	def language(self, irc, msg, args):
+		""" takes no arguments
+		Warns users about foul language.
+		"""
+		irc.reply("This is a family friendly network. This means no foul language in chat. If you do need to curse, please blur it sufficiently (wtf, and s*** are acceptable). If you do swear in chat, you will be asked, then eventually forced to stop. This is considered a major offense and may end in a ban.", prefixNick = False)
+	language = wrap(language)
+	
 Class = Minetest_Rules
 
 
