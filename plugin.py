@@ -179,6 +179,20 @@ class Minetest_Rules(callbacks.Plugin):
 		"""
 		caps(self, irc, msg, args)
 	shouting = wrap(shouting)
+	
+	def flooding(self, irc, msg, args):
+		""" takes no arguments
+		Tells users about flooding.
+		"""
+		irc.reply("Do not flood. Flooding is saying large amounts of gibberish or nonsense for no reason. Doing this may result in a kick or ban.",prefixNick = False)
+	flooding = wrap(flooding)
+	
+	def spam(self, irc, msg, args):
+		""" takes no arguments
+		Tells users about spamming.
+		"""
+		irc.reply("Do not spam. Spamming is saying things in a deliberate attempt to lead people away from the conversation, or to advertise a product. Doing this may result in a kick or ban.", prefixNick = False)
+	spam = wrap(spam)
 		
 Class = Minetest_Rules
 
