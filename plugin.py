@@ -184,7 +184,7 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells users about flooding.
 		"""
-		irc.reply("Do not flood. Flooding is saying large amounts of gibberish or nonsense for no reason. Doing this may result in a kick or ban.",prefixNick = False)
+		irc.reply("Do not flood. Flooding is saying large amounts of gibberish or nonsense for no reason. Flooding is also posting the same thing over and over. Doing this may result in a kick or ban.",prefixNick = False)
 	flooding = wrap(flooding)
 	
 	def spam(self, irc, msg, args):
@@ -207,6 +207,21 @@ class Minetest_Rules(callbacks.Plugin):
 		"""
 		irc.reply("Minetest privileges are a way of allowing users to do certain things, for instance, there is a \"fast\" priv that allows you to move quickly. Please do not ask for extra privs; they will not be granted.", prefixNick = False)
 	privileges = wrap(privileges)
+	
+	def personalinfo(self, irc, msg, args):
+		""" takes no arguments
+		Tells users not to give out their personal information.
+		"""
+		irc.reply("Never ever give out personal information, such as a phone number or email in chat. If you do so, for your protection (and the well-being of others) you may be kicked or banned.", prefixNick = False)
+	personalinfo = wrap(personalinfo)
+	
+	def extraprivs(self, irc, msg, args):
+		""" takes no arguments
+		Tells users to never ask for extra privs.
+		"""
+		irc.reply("Never ask for special privileges, such as fly, noclip, or ban. These are reserved for moderators and admins only. Also, don't ask to be a moderator or admin. If you do, you may be kicked/banned at the active moderator(s) discretion.", prefixNick = False)
+	extraprivs = wrap(extraprivs)
+	
 Class = Minetest_Rules
 
 
