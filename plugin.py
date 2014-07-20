@@ -193,7 +193,20 @@ class Minetest_Rules(callbacks.Plugin):
 		"""
 		irc.reply("Do not spam. Spamming is saying things in a deliberate attempt to lead people away from the conversation, or to advertise a product. Doing this may result in a kick or ban.", prefixNick = False)
 	spam = wrap(spam)
-		
+	
+	def teleport(self, irc, msg, args):
+		""" takes no arguments
+		Tells users about teleporting.
+		"""
+		irc.reply("This is Minetest, not Minecraft. Commands such as \"\tp\" and \"tp\\username\" will not work. Teleporting requires a privilege, and it is only given to admins and moderators.", prefixNick = False)
+	teleport = wrap(teleport)
+	
+	def privileges(self, irc, msg, args):
+		""" takes no arguments
+		Tells users about the Minetest privilege system.
+		"""
+		irc.reply("Minetest privileges are a way of allowing users to do certain things, for instance, there is a \"fast\" priv that allows you to move quickly. Please do not ask for extra privs; they will not be granted.", prefixNick = False)
+	privileges = wrap(privileges)
 Class = Minetest_Rules
 
 
