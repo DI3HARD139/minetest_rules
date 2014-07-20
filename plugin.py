@@ -131,6 +131,41 @@ class Minetest_Rules(callbacks.Plugin):
 		irc.reply("This is a family friendly network. This means no foul language in chat. If you do need to curse, please blur it sufficiently (wtf, and s*** are acceptable). If you do swear in chat, you will be asked, then eventually forced to stop. This is considered a major offense and may end in a ban.", prefixNick = False)
 	language = wrap(language)
 	
+	def interact(self, irc, msg, args):
+		""" takes no arguments
+		Tells users how to get interact.
+		"""
+		irc.reply("Interact allows you to build and dig on the servers. Most servers do not have interact by default. You must read the rules and understand them fully, then ask a moderator for interact in chat. If one does not respond immediately, please wait until one of the moderators listed at the rules responds. Meanwhile, you may walk around the servers and take advantage of the view.", prefixNick = False)
+	interact = wrap(interact)
+	
+	def mtzbskins(self, irc, msg, args):
+		""" takes no arguments
+		Tells users how to get skins on Onez's Minetest Server.
+		"""
+		irc.reply("To get a skin on Onez's server, email the link to the skin's raw image to mtz_deezl@yahoo.com, or, if you can, paste the link to the raw image in chat. Use a site such as www.minecraftskins.com. Only Zeno`/onez and deezl can apply skins. Please say their name to alert them that you would like a skin.", prefixNick = False)
+	mtzbskins = wrap(mtzbskins)
+	
+	def irc(self, irc, msg, args):
+		""" takes no arguments
+		Tells users how to use the IRC server.
+		"""
+		irc.reply("The chat on these servers is interlinked through an IRC network. IRC is an acronym for \"Internet Relay Chat\". Please note that IRC is /not/ a game. If you would like to join IRC, use a web client such as KiwiIRC (www.kiwiirc.com), or a downloadable client such as HexChat for PC, or an app such as MangoIRC for tablets.", prefixNick = False)
+	irc = wrap(irc)
+	
+	def chatinterlink(self, irc, msg, args):
+		""" takes no arguments
+		Explains how the chat is interlinked between servers.
+		"""
+		irc.reply("If you cannot see players, then they are most likely on another server. (The easiest way to tell is if they have an \"@\" symbol after their name.) The reason that you can still hear them talking in chat is that they are connected with an internet chat protcol called IRC.", prefixNick = False)
+	chatinterlink = wrap(chatinterlink)
+	
+	def usingcommands(self, irc, msg, args):
+		""" takes no arguments
+		Explains to users how to use chat commands.
+		"""
+		irc.reply("To use chat commands, first type a forward slash  /   and then the name of the command. For instance, if you are trying to use the \"spawn\" command, type it in without any spaces or extra words. Like such: /spawn", prefixNick = False)
+	usingcommands = wrap(usingcommands)
+		
 Class = Minetest_Rules
 
 
