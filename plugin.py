@@ -142,14 +142,14 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells users how to get skins on Onez's Minetest Server.
 		"""
-		irc.reply("To get a skin on Onez's server, email the link to the skin's raw image to mtz_deezl@yahoo.com, or, if you can, paste the link to the raw image in chat. Use a site such as www.minecraftskins.com. Only Zeno`/onez and deezl can apply skins. Please say their name to alert them that you would like a skin.", prefixNick = False)
+		irc.reply("To get a skin on Onez's server, email the link to the skin's raw image to mtz_deezl@yahoo.com, or, if you can, paste the link to the raw image in chat. Use a site such as www.minecraftskins.com. Only Zeno`/onez and deezl can apply skins. Please say their name to alert them that you would like a skin. Please note that the skin will not be applied until the next server restart.", prefixNick = False)
 	mtzbskins = wrap(mtzbskins)
 	
 	def irc(self, irc, msg, args):
 		""" takes no arguments
 		Tells users how to use the IRC server.
 		"""
-		irc.reply("The chat on these servers is interlinked through an IRC network. IRC is an acronym for \"Internet Relay Chat\". Please note that IRC is /not/ a game. If you would like to join IRC, use a web client such as KiwiIRC (www.kiwiirc.com), or a downloadable client such as HexChat for PC, or an app such as MangoIRC for tablets.", prefixNick = False)
+		irc.reply("The chat on these servers is interlinked through an IRC network. IRC is an acronym for \"Internet Relay Chat\". Please note that IRC is /not/ a game. If you would like to join IRC, use a web client such as KiwiIRC ( www.kiwiirc.com ), or a downloadable client such as HexChat for PC, or an app such as MangoIRC for tablets.", prefixNick = False)
 	irc = wrap(irc)
 	
 	def chatinterlink(self, irc, msg, args):
