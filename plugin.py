@@ -198,7 +198,7 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells users about teleporting.
 		"""
-		irc.reply("This is Minetest, not Minecraft. Commands such as \"\tp\" and \"tp\\username\" will not work. Teleporting requires a privilege, and it is only given to admins and moderators.", prefixNick = False)
+		irc.reply("This is Minetest, not Minecraft. Commands such as \"\\tp\" and \"tp\\username\" will not work. Teleporting requires a privilege, and it is only given to admins and moderators.", prefixNick = False)
 	teleport = wrap(teleport)
 	
 	def privileges(self, irc, msg, args):
