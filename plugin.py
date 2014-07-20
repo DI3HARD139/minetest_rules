@@ -165,6 +165,20 @@ class Minetest_Rules(callbacks.Plugin):
 		"""
 		irc.reply("To use chat commands, first type a forward slash  /   and then the name of the command. For instance, if you are trying to use the \"spawn\" command, type it in without any spaces or extra words. Like such: /spawn", prefixNick = False)
 	usingcommands = wrap(usingcommands)
+	
+	def caps(self, irc, msg, args):
+		""" takes no arguments
+		Tells users not to shout.
+		"""
+		irc.reply("Please do not talk in ALL CAPS. This is considered shouting, and is against the rules. If you continue to talk in caps, you will be kicked, then eventually banned.", prefixNick = False)
+	caps = wrap(caps)
+	
+	def shouting(self, irc, msg, args):
+		""" takes no arguments
+		Tells users not to shout.
+		"""
+		caps(self, irc, msg, args)
+	shouting = wrap(shouting)
 		
 Class = Minetest_Rules
 
