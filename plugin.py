@@ -44,8 +44,11 @@ except ImportError:
 
 class Minetest_Rules(callbacks.Plugin):
 	"""Add the help for "@plugin help Minetest_Rules" here
-	This should describe *how* to use this plugin."""
-	pass
+	This should describe *how* to use this plugin.
+	To use the commands in this plugin, simply use the bot's command prefix, then the name of the rule.
+	To get a list of the rules, type (bot command prefix)list Minetest_Rules.
+	"""
+	
 	
 	def dating(self, irc, msg, args):
 		""" takes no arguments
@@ -100,7 +103,7 @@ class Minetest_Rules(callbacks.Plugin):
 		""" takes no arguments
 		Tells people about the illegal tablet clients that are frequently used.
 		"""
-		Minetest_Rules.worldcraft(self, irc, msg, args)
+		self.worldcraft(self, irc, msg, args)
 	buildcraft = wrap(buildcraft)
 	
 	def lag(self, irc, msg, args):
@@ -223,6 +226,3 @@ class Minetest_Rules(callbacks.Plugin):
 	extraprivs = wrap(extraprivs)
 	
 Class = Minetest_Rules
-
-
-# vim:set shiftwidth=4 softtabstop=4 expandtab textwidth=79:

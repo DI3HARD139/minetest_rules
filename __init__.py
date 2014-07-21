@@ -31,6 +31,8 @@
 """
 Add a description of the plugin (to be presented to the user inside the wizard)
 here.  This should describe *what* the plugin does.
+Provides a list of commonly used rules for Minetest multiplayer servers.
+Allows the user to save keystrokes from retyping the same guidelines over and over again.
 """
 
 import supybot
